@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #faf8ff;
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .featured-card:hover .featured-image {
+            transform: scale(1.03);
+        }
+        .transition-all {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#eaedff",
+                        "on-background": "#131b2e",
+                        "outline": "#737686",
+                        "surface-variant": "#dae2fd",
+                        "on-secondary-container": "#fffbff",
+                        "on-tertiary-fixed": "#3d0026",
+                        "tertiary-container": "#b74082",
+                        "tertiary-fixed-dim": "#ffafd3",
+                        "background": "#faf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d2d9f4",
+                        "on-tertiary-fixed-variant": "#85145a",
+                        "surface-container-low": "#f2f3ff",
+                        "on-tertiary-container": "#ffecf1",
+                        "on-surface": "#131b2e",
+                        "tertiary": "#982669",
+                        "surface-container-high": "#e2e7ff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "inverse-surface": "#283044",
+                        "primary": "#004ac6",
+                        "surface": "#faf8ff",
+                        "surface-container-highest": "#dae2fd",
+                        "primary-container": "#2563eb",
+                        "surface-tint": "#0053db",
+                        "on-secondary-fixed": "#23005c",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#00174b",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "inverse-primary": "#b4c5ff",
+                        "error": "#ba1a1a",
+                        "secondary": "#6b38d4",
+                        "on-surface-variant": "#434655",
+                        "outline-variant": "#c3c6d7",
+                        "tertiary-fixed": "#ffd8e7",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#e9ddff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "secondary-container": "#8455ef",
+                        "on-primary-container": "#eeefff",
+                        "surface-bright": "#faf8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xl": "80px",
+                        "margin": "24px",
+                        "md": "24px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-xl": ["Montserrat"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface mb-24">
+<!-- Top Navigation Bar -->
+<header class="w-full top-0 sticky z-50 bg-surface shadow-sm flex justify-between items-center px-margin h-16 max-w-full">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A clean and professional vector avatar of a high school student with a friendly expression. The illustration style is modern and minimalist, featuring a soft color palette of light blues and whites. The character has short hair and is wearing a simple casual hoodie, set against a solid pastel blue background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfyH3FMVNIGTqGZD5FDgSELHKT6mSXpaXeIsCXnH05F8pVgU7uxHps1Su7NvJCmflq9HWd9RA38ChXfshOo0NaqI9lce6wvJU6UXau_SBV5JZ-5y8eLjzSex1bCAl89nYKgDSl3nm3cDplORhQFOpzf7ZNcvHSxPBKEQhLSZuIKTJHYKc3cy1o2G20Cf02vdpaFbx6S6sKE9ZWQGAaX1s_dzpFbJpxzzHQTQx4zgmiA2whKZbcjWmubi5fOIl1Weu5-R0L95BNOqZ0"/>
+</div>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">HighSchool Hub</h1>
+<button class="w-10 h-10 flex items-center justify-center text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="max-w-[1280px] mx-auto px-margin pt-md">
+<!-- Category Chips -->
+<nav class="flex gap-sm overflow-x-auto pb-md scrollbar-hide">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-full whitespace-nowrap shadow-md">À la une</button>
+<button class="bg-primary-container/10 text-primary font-label-md text-label-md px-6 py-2 rounded-full whitespace-nowrap hover:bg-primary-container/20 transition-colors">Tech</button>
+<button class="bg-primary-container/10 text-primary font-label-md text-label-md px-6 py-2 rounded-full whitespace-nowrap hover:bg-primary-container/20 transition-colors">École</button>
+<button class="bg-primary-container/10 text-primary font-label-md text-label-md px-6 py-2 rounded-full whitespace-nowrap hover:bg-primary-container/20 transition-colors">Web</button>
+<button class="bg-primary-container/10 text-primary font-label-md text-label-md px-6 py-2 rounded-full whitespace-nowrap hover:bg-primary-container/20 transition-colors">Sports</button>
+</nav>
+<!-- Featured Article -->
+<section class="mb-lg">
+<div class="featured-card group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="featured-image w-full h-full object-cover transition-all duration-700" data-alt="A vibrant, energetic wide-angle shot of a group of diverse high school students collaborating on a technology project in a modern, sun-drenched classroom. They are surrounded by laptops and digital tablets, with soft morning light streaming through large windows. The aesthetic is clean and high-tempo, emphasizing innovation and shared discovery with a sophisticated, professional UI feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5C_pNZHYWgbn17HuXZOmgXUujUf9Z8eDSq5mHyFFpP2fm5FEnR1Z4rPR5KFLhuHxg3m_otHIvNsbAoBjQfjKPLf6RAmTNv-BD79G0at2CFqos4Gp3DVF9Vrlq0eL4BOlx-c0WvtQva6aetVgVoothnYq8lPf18sPVep6D69VeVENJ1OTU0XaqnNgIuInzS78Tcjgs6K98uXvGhmxtgxm40l5u1zVUwbghid6-AiUC_F4DOAsHppMkC-WZFyKjzXIbCp9gMajee0gD"/>
+</div>
+<div class="p-md md:p-lg">
+<div class="flex items-center gap-sm mb-sm">
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full font-label-md text-[12px] uppercase tracking-wider">Tech</span>
+<span class="text-outline font-label-md text-[12px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 5 min de lecture
+                        </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-sm group-hover:text-primary transition-colors">L'Intelligence Artificielle au service des étudiants : Révolution ou distraction ?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Découvrez comment les nouveaux outils d'IA générative transforment les méthodes d'étude traditionnelles et ce que cela signifie pour l'avenir de l'éducation au lycée.</p>
+</div>
+</div>
+</section>
+<!-- News Feed Header -->
+<div class="flex justify-between items-end mb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Actualités Récentes</h3>
+<button class="text-primary font-label-md text-label-md hover:underline">Voir tout</button>
+</div>
+<!-- Smaller Articles List -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Article 1 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col cursor-pointer group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-angle photo of three students laughing and talking while sitting on a campus lawn with notebooks and backpacks. The scene is bright and cheerful, illuminated by golden hour sunlight. The overall atmosphere is optimistic and high-tempo, reflecting a positive student community experience in a modern academic environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuEW5tvSCq-x_w-cL_W44_SI9lpOa48FV52RXsN8zyJJwKO4-ncIbn56SH62siyBTxmlMwzIw89tRjLXXQEb0HT-asruKF60Xdq3FE8G_Di4ELPoMZow1YUhZw1vqyQ19bkeJCIHuOYZtobamHA7GKKQlx5ABECAa_Hhvxby6QaJgwb-0AAt3AxjAgMT1mOAZmQAaOOp9UBIPwwMHaKLRS5TDW_UhW1WnPeVz60-hvlYCuNqW5wq3jIxbeNSGympbLPJ9Krc_TvczW"/>
+</div>
+<div class="p-md flex-grow flex flex-col">
+<div class="flex items-center gap-sm mb-base">
+<span class="bg-secondary/10 text-secondary px-2 py-0.5 rounded-full font-label-md text-[11px] uppercase tracking-wider">École</span>
+<span class="text-outline font-label-md text-[11px]">3 min read</span>
+</div>
+<h4 class="font-headline-md text-body-lg font-bold text-on-surface mb-base group-hover:text-primary transition-colors line-clamp-2">Nouveau club de robotique : Les inscriptions sont ouvertes</h4>
+<p class="font-body-md text-label-md text-on-surface-variant line-clamp-2 mb-md">Rejoignez-nous chaque mardi pour construire le futur. Aucune expérience préalable n'est requise.</p>
+<div class="mt-auto flex items-center justify-between pt-sm">
+<span class="text-outline font-label-md text-[12px]">Il y a 2 heures</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Article 2 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col cursor-pointer group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A macro shot of a sleek modern laptop screen showing lines of vibrant code against a dark background, reflecting soft purple and blue ambient lights. The setting is a cozy, dimly lit bedroom that looks tech-savvy and focused. The image evokes a feeling of digital-native sophistication and focused creativity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1s4VCBkfxUepsyxRkX0ttAXXzzmPKh0Vdfjf8JB5ZppC0OZTo3CP8cVr2IjaAGiTNe33ctt10iYQYSryGFriqwD0iQ0GsaqQPoGsVPoKXVPtoc8x2XwbYYLyHMbD-LkI4_kYoq_WQyyBkcnZGke4gwEPjP0f08N-TXZwSU0K_vCLtegewoRA1Z_xjcKyVP935kNcnRyJFXkoVFXB0ZD6m0TGsM1SFAsQRupR9XInoVWHPAl5tCf_L8FRDIU2jJpXGvjVeetcAWoDW"/>
+</div>
+<div class="p-md flex-grow flex flex-col">
+<div class="flex items-center gap-sm mb-base">
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded-full font-label-md text-[11px] uppercase tracking-wider">Web</span>
+<span class="text-outline font-label-md text-[11px]">3 min read</span>
+</div>
+<h4 class="font-headline-md text-body-lg font-bold text-on-surface mb-base group-hover:text-primary transition-colors line-clamp-2">5 extensions Chrome indispensables pour réviser</h4>
+<p class="font-body-md text-label-md text-on-surface-variant line-clamp-2 mb-md">Optimisez votre temps de navigation et restez concentré sur vos objectifs scolaires avec ces outils gratuits.</p>
+<div class="mt-auto flex items-center justify-between pt-sm">
+<span class="text-outline font-label-md text-[12px]">Il y a 5 heures</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Article 3 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col cursor-pointer group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A cinematic shot of an empty high school gymnasium with shiny wooden floors, featuring a single basketball at center court under a spotlight. The mood is expectant and professional, with a deep blue and warm orange color palette. The lighting creates strong shadows and highlights, emphasizing the high-quality, modern athletic environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb22o-6oxuWJgHZ_AyvAlTngPJQ0ZGTHFmfx81FPDWh4vLt17xKwqNaEqpfbG2nsGrSJJyq9sbdA49fKVktoNJ1LFnggj66QwT-HODGV7h_DvQDPV3Dkmm9RApABuCMKew5kl028rhhwzHVKEFU-rBZLIYRHD2kOaEXpnHp0xYRGLMvN11mp7q_541rtoKmQisg-Lgebu2tdLOM06JqyIm46WMdkx71sCCSZaYlV_iR-UxfCi0VA2veUXOFjc-B88MazfY_8xRnYC7"/>
+</div>
+<div class="p-md flex-grow flex flex-col">
+<div class="flex items-center gap-sm mb-base">
+<span class="bg-tertiary/10 text-tertiary px-2 py-0.5 rounded-full font-label-md text-[11px] uppercase tracking-wider">École</span>
+<span class="text-outline font-label-md text-[11px]">3 min read</span>
+</div>
+<h4 class="font-headline-md text-body-lg font-bold text-on-surface mb-base group-hover:text-primary transition-colors line-clamp-2">Championnats de Basketball : La finale approche</h4>
+<p class="font-body-md text-label-md text-on-surface-variant line-clamp-2 mb-md">Notre équipe affronte les rivaux de Saint-Michel ce vendredi soir. Tout ce qu'il faut savoir sur le match.</p>
+<div class="mt-auto flex items-center justify-between pt-sm">
+<span class="text-outline font-label-md text-[12px]">Hier</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Newsletter CTA -->
+<section class="mt-lg mb-xl bg-gradient-to-br from-primary to-secondary p-8 rounded-2xl text-on-primary shadow-lg overflow-hidden relative">
+<div class="relative z-10 max-w-lg">
+<h2 class="font-headline-lg text-headline-lg mb-sm">Ne manquez rien.</h2>
+<p class="font-body-md text-body-md mb-md opacity-90">Recevez chaque semaine le condensé des meilleures actualités du lycée directement dans votre boîte mail.</p>
+<div class="flex flex-col sm:flex-row gap-base">
+<input class="bg-white/10 border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white outline-none flex-grow backdrop-blur-sm" placeholder="votre@email.com" type="email"/>
+<button class="bg-white text-primary font-label-md text-label-md px-8 py-3 rounded-xl hover:scale-105 active:scale-95 transition-all shadow-md">S'abonner</button>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-12 -right-12 w-48 h-48 bg-secondary-container/20 rounded-full blur-2xl"></div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-4 pb-safe bg-surface-container-low z-50 rounded-t-xl shadow-[0_-4px_24px_rgba(19,27,46,0.06)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/10 transition-colors px-4 py-1.5 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-md text-[12px] mt-1">Hub</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/10 transition-colors px-4 py-1.5 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">sports_esports</span>
+<span class="font-label-md text-[12px] mt-1">Games</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-1.5 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">article</span>
+<span class="font-label-md text-[12px] mt-1">News</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/10 transition-colors px-4 py-1.5 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">star</span>
+<span class="font-label-md text-[12px] mt-1">Premium</span>
+</a>
+</nav>
+<script>
+        // Subtle interaction for category chips
+        const chips = document.querySelectorAll('nav button');
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                chips.forEach(c => {
+                    c.classList.remove('bg-primary', 'text-on-primary', 'shadow-md');
+                    c.classList.add('bg-primary-container/10', 'text-primary');
+                });
+                chip.classList.add('bg-primary', 'text-on-primary', 'shadow-md');
+                chip.classList.remove('bg-primary-container/10', 'text-primary');
+            });
+        });
+
+        // Hover lift effect for articles
+        document.querySelectorAll('article').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>
